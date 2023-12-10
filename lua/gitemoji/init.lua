@@ -28,8 +28,7 @@ M.git_add = function(args)
   local args_clear = {}
   for _, arg in ipairs(args) do
     if arg ~= "--no-push" then
-      print("\n")
-      print(arg)
+      print(arg .. "\n")
       table.insert(args_clear, arg)
     end
   end
