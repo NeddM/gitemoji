@@ -1,5 +1,8 @@
 # gitemoji
 
+This plugin allow you to easily add an emoji to your commit coment.
+
+
 ## Install
 The way I tested if this plugin works is with __Packer__.
 ```lua
