@@ -6,6 +6,8 @@ The way I tested if this plugin works is with __Packer__.
 use { "NeddM/gitemoji" }
 ```
 
+
+
 You also need to call the __setup__ method on the _init.lua_. The best way to do it is to create `./lua/gitemoji-config/init.lua`.
 
 Inside this _init.lua_ you have to add this line:
