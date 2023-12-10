@@ -1,2 +1,3 @@
 # gitemoji
 
+## How to install
