@@ -1,7 +1,6 @@
 # gitemoji
 
-This plugin allow you to easily add an emoji to your commit coment.
-
+This Neovim plugin allow you to easily add an emoji to your commit coment.
 
 
 ## Install
