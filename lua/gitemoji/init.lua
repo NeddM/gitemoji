@@ -24,6 +24,7 @@ M.git_status = function()
   end
 end
 
+
 M.git_add = function(args)
   local args_clear = {}
   for _, arg in ipairs(args) do
