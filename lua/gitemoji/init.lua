@@ -121,12 +121,6 @@ end
 
 M.git_push = function(check_push)
   if check_push == true then
-    vim.ui.input({ prompt = "Want to push? y/n: " }, function(prompt_ask_push)
-      if prompt_ask_push == "n" then
-        print("Push skiped!")
-        return nil
-      end
-    end)
     local success, result = vim.cmd("!git push")
     if success then
       print("Commit pushed!\n")
