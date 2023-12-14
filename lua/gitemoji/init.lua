@@ -24,34 +24,43 @@ M.git_status = function()
   end
 end
 
-M.git_add = function(args)
-  local args_clear = {}
-  for _, arg in ipairs(args) do
-    if arg ~= "--no-push" then
-      print(arg .. "\n")
-      table.insert(args_clear, arg)
-    end
+M.git_add = function()
+  local success, result = vim.cmd("!git add " .. arg)
+  if success then
+    print(arg .. " added.\n")
+  else
+    print("Error adding files: " .. result)
+    vim.notify("Error: " .. result, vim.log.levels.ERROR)
   end
 
-  if #args_clear > 0 then
-    for _, arg in ipairs(args_clear) do
-      local success, result = vim.cmd("!git add " .. arg)
-      if success then
-        print(arg .. " added.\n")
-      else
-        print("Error adding files: " .. result)
-        vim.notify("Error: " .. result, vim.log.levels.ERROR)
-      end
-    end
-  else
-    local success, result = vim.cmd("!git add .")
-    if success then
-      print("Data added.\n")
-    else
-      print("Error adding files: " .. result)
-      vim.notify("Error: " .. result, vim.log.levels.ERROR)
-    end
-  end
+
+  -- local args_clear = {}
+  -- for _, arg in ipairs(args) do
+  --   if arg ~= "--no-push" then
+  --     print(arg .. "\n")
+  --     table.insert(args_clear, arg)
+  --   end
+  -- end
+
+  -- if #args_clear > 0 then
+  --   for _, arg in ipairs(args_clear) do
+  --     local success, result = vim.cmd("!git add " .. arg)
+  --     if success then
+  --       print(arg .. " added.\n")
+  --     else
+  --       print("Error adding files: " .. result)
+  --       vim.notify("Error: " .. result, vim.log.levels.ERROR)
+  --     end
+  --   end
+  -- else
+  --   local success, result = vim.cmd("!git add .")
+  --   if success then
+  --     print("Data added.\n")
+  --   else
+  --     print("Error adding files: " .. result)
+  --     vim.notify("Error: " .. result, vim.log.levels.ERROR)
+  --   end
+  -- end
 end
 
 M.git_commit = function()
@@ -137,7 +146,7 @@ M.main = function(...)
   local args = { ... }
   local check_push = M.check_if_push(args)
   M.git_status()
-  M.git_add(args)
+  M.git_add()
   M.git_commit()
   M.git_push(check_push)
 end
