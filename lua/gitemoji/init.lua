@@ -25,13 +25,15 @@ M.git_status = function()
 end
 
 M.git_add = function()
-  local success, result = vim.cmd("!git add " .. arg)
+  local success, result = vim.cmd("!git add .")
   if success then
-    print(arg .. " added.\n")
+    print("Data added.\n")
   else
     print("Error adding files: " .. result)
     vim.notify("Error: " .. result, vim.log.levels.ERROR)
   end
+
+
 
 
   -- local args_clear = {}
