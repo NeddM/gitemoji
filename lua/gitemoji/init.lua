@@ -35,7 +35,6 @@ M.git_add = function()
 
 
 
-
   -- local args_clear = {}
   -- for _, arg in ipairs(args) do
   --   if arg ~= "--no-push" then

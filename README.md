@@ -22,8 +22,6 @@ require('gitemoji-config')
 ```
 
 ## Arguments
-By default, the add command is apply as `git add .`. But you also can add files explicitly, adding it as an argument like this `:Gitemoji README.md`.
-
 You can also skip the push adding the argument `--no-push`. Like this `:Gitemoji --no-push`. By default, it will push the commit.
 
 ## Examples
@@ -33,22 +31,7 @@ This will add all files and also push the commit.
 :Gitemoji
 ```
 
-This will only add the README.md file.
-```
-:Gitemoji README.md
-```
-
 This will not push the commit.
 ```
 :Gitemoji --no-push
 ```
-
-This only add the README.md file, and dont pushes the commit.
-```
-:Gitemoji README.md --no-push
-```
-
-
-Cambio
-
-otro cambio
